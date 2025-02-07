@@ -1,3 +1,7 @@
+import { afterEach } from 'vitest'
+import { cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom/vitest'
+
 global.fetch = require('node-fetch');
 
 global.basePlants = [
@@ -67,8 +71,11 @@ global.alternatePlants = [
 ]
   
 global.setFetchResponse = (val) => {
-    global.fetch = jest.fn(() => Promise.resolve({
+    global.fetch = vi.fn(() => Promise.resolve({
         json: () => Promise.resolve(val)
     }))
 }
-  
+
+afterEach(() => {
+    cleanup();
+})
