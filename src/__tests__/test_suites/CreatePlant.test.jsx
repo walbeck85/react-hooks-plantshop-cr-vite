@@ -10,7 +10,7 @@ describe('2nd Deliverable', () => {
 
         const firstPlant = {name: 'foo', image: 'foo_plant_image_url', price: '10'}
     
-        global.setFetchResponse(firstPlant)
+        global.setFetchResponse({...firstPlant, id: "184298qfhquhf92"})
     
         fireEvent.change(getByPlaceholderText('Plant name'), { target: { value: firstPlant.name } });
         fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: firstPlant.image } });
@@ -30,7 +30,7 @@ describe('2nd Deliverable', () => {
 
         const secondPlant = {name: 'bar', image: 'bar_plant_image_url', price: '5'}
     
-        global.setFetchResponse(secondPlant)
+        global.setFetchResponse({...secondPlant, id: "3810fqhrquhf9fnqnc0"})
     
         fireEvent.change(getByPlaceholderText('Plant name'), { target: { value: secondPlant.name } });
         fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: secondPlant.image } });
