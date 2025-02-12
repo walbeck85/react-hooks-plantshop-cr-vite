@@ -73,7 +73,9 @@ global.alternatePlants = [
   
 global.setFetchResponse = (val) => {
     global.fetch = vi.fn(() => Promise.resolve({
-        json: () => Promise.resolve(val)
+        json: () => Promise.resolve(val),
+        ok: true,
+        status: 200
     }))
 }
 
