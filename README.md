@@ -91,3 +91,60 @@ Example Response:
   "price": 15.99
 }
 ```
+
+## Task 1: Define the Problem
+
+The frontend of the application is currently not connected to the backend. We need to connect the two through fetch requests. As a user, one should be able to:
+
+- See all plants on page load.
+- Add a new plant to the page by submitting the form.
+- Mark a plant as "sold out".
+- Search for plants by their name and see a filtered list of plants.
+
+## Task 2: Determine the Design
+
+Below is a breakdown of the state, props, and responsibilities for each component.
+
+### `<App />`
+- **State**: 
+  - `plants` (array of all plant objects)
+  - `searchTerm` (string for filtering plants)
+- **Props Passed**: 
+  - `plants` and setter functions to child components
+- **Responsibilities**:
+  - Fetch all plants on page load
+  - Maintain global state for plant data and search input
+
+### `<PlantList />`
+- **Props Received**:
+  - `plants` (array of filtered plants)
+  - `onSoldOut` (callback to toggle sold out status)
+- **Responsibilities**:
+  - Render a list of `<PlantCard />` components
+
+### `<PlantCard />`
+- **Props Received**:
+  - `plant` (object)
+  - `onSoldOut` (callback function)
+- **Responsibilities**:
+  - Display individual plant details
+  - Trigger "sold out" status change
+
+### `<NewPlantForm />`
+- **State**:
+  - `name`, `image`, `price` (controlled inputs)
+- **Props Received**:
+  - `onAddPlant` (callback to add new plant to state/backend)
+- **Responsibilities**:
+  - Handle form submission
+  - Send POST request to add plant
+  - Clear form on submit
+
+### `<Search />`
+- **State**:
+  - `searchTerm` (string input)
+- **Props Received**:
+  - `onSearch` (callback to update filter)
+- **Responsibilities**:
+  - Capture user input for search
+  - Trigger filtering of displayed plants
