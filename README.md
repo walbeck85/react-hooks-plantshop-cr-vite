@@ -2,7 +2,7 @@
 
 ## Demo
 
-Use this gif as an example of how the app should work.
+Keeping this gif as an example of how the app should work.
 
 ![Demo GIF](./demo.gif)
 
@@ -148,3 +148,56 @@ Below is a breakdown of the state, props, and responsibilities for each componen
 - **Responsibilities**:
   - Capture user input for search
   - Trigger filtering of displayed plants
+
+
+---
+
+## Usage Instructions
+
+### Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/walbeck85/react-hooks-plantshop-cr-vite.git
+   cd react-hooks-plantshop-cr-vite
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the backend server**
+   ```bash
+   npm run server
+   ```
+
+4. **Start the frontend development server**
+   ```bash
+   npm run dev
+   ```
+
+5. Open the app in your browser at [http://localhost:5173](http://localhost:5173)
+
+### Features
+
+- Fetches and displays all plant listings on initial load.
+- Allows users to add new plants via a form with name, image URL, and price.
+- Users can mark individual plants as "Sold Out" with a toggle button.
+- Includes a real-time search feature to filter plants by name.
+
+### Screenshot
+
+![App Screenshot](https://i.imgur.com/zQLUnMY.png)
+
+### Running Tests
+
+To execute the test suite and validate functionality:
+```bash
+npm run test
+```
+
+### Notes
+
+- The backend server must be running on port `6001` for full functionality.
+- All plant data is managed through local state and persisted via API calls.
