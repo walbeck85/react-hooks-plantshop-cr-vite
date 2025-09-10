@@ -188,7 +188,7 @@ Below is a breakdown of the state, props, and responsibilities for each componen
 
 ### Screenshot
 
-![App Screenshot]([[https://i.imgur.com/zQLUnMY.png](https://imgur.com/a/CtvGU1a)](https://imgur.com/a/course-5-module-2-lab-plantshop-CtvGU1a))
+![App Screenshot] https://imgur.com/a/course-5-module-2-lab-plantshop-CtvGU1a
 
 ### Running Tests
 
