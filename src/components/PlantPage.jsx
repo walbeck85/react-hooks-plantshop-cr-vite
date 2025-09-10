@@ -5,6 +5,7 @@ import Search from "./Search";
 
 function PlantPage() {
   const [plants, setPlants] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // 🔍 Track search input
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -28,12 +29,22 @@ function PlantPage() {
     setPlants([...plants, newPlant]);
   }
 
+  // 🔍 Update search query state
+  function handleSearch(query) {
+    setSearchQuery(query);
+  }
+
+  // 🌿 Filter plants based on search query
+  const filteredPlants = plants.filter((plant) =>
+    plant.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main>
       {/* Pass onAddPlant to NewPlantForm so it can notify when a new plant is added */}
       <NewPlantForm onAddPlant={handleAddPlant} />
-      <Search />
-      <PlantList plants={plants} />
+      <Search onSearch={handleSearch} /> {/* 🔍 Pass handler to Search */}
+      <PlantList plants={filteredPlants} /> {/* 🧹 Show filtered list */}
     </main>
   );
 }
