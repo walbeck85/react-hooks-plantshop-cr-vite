@@ -15,7 +15,7 @@ function PlantCard({ name, image, price }) {
       {/* Render plant image and name dynamically from props */}
       <img src={image} alt={name} />
       <h4>{name}</h4>
-      <p>Price: ${price}</p>
+      <p>Price: {price}</p>
 
       {/* Button text and class change based on stock status */}
       <button 
