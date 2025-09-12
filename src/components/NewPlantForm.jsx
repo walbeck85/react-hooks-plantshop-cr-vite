@@ -14,7 +14,7 @@ function NewPlantForm({ onAddPlant }) {
     const newPlant = {
       name,
       image,
-      price: parseFloat(price), // ensures price is stored as a number
+      price, // ensures price is stored as a string
     };
 
     // Send a POST request to the backend to create a new plant
@@ -61,9 +61,8 @@ function NewPlantForm({ onAddPlant }) {
           onChange={(e) => setImage(e.target.value)}
         />
         <input
-          type="number"
+          type="text"
           name="price"
-          step="0.01"
           placeholder="Price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
